@@ -5,7 +5,7 @@ var app = tty.createServer({
   users: {
     foo: 'bar'
   },
-  port: 8000
+  port: 8080
 });
 
 app.get('/foo', function(req, res, next) {
