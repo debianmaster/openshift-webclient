@@ -1,4 +1,4 @@
-FROM openshift/nodejs:latest
+FROM openshift/node
 ADD . /opt/app-root/src
 WORKDIR /opt/app-root/src
 RUN npm install
