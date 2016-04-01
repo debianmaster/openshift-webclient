@@ -1,0 +1,15 @@
+{
+  "name": "openshift-webclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Chakradhar Rao Jonagam",
+  "license": "ISC",
+  "dependencies": {
+    "tty.js": "^0.2.15"
+  }
+}
