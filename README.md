@@ -16,3 +16,8 @@ oc login http://shell-{project}.{oseenv}.com:8443
 
 
 
+
+
+>  Note:   This image needs privilaged container (will change in near future)  access on openshift to run.
+Check this link for more info on how to enable privilaged mode https://github.com/debianmaster/Notes/wiki/Enabling-privileged-containers-on-Openshift
+
