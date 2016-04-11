@@ -1,5 +1,7 @@
 ## openshift-webclient setup
 ```sh
+oc new-app debianmaster/ose-client:v2 --name='shell'
+           OR
 oc new-app https://github.com/debianmaster/openshift-webclient  --name='shell'
 oc expose dc/shell
 ```
