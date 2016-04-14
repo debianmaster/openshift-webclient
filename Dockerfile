@@ -1,16 +1,15 @@
-FROM centos:7.1.1503
-MAINTAINER Chakradhar Rao Jonagam <9chakri@gmail.com> 
+FROM    centos:centos6
+MAINTAINER Chakradhar Rao Jonagam <9chakri@gmail.com>
+ 
+RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 
-RUN yum -y update; yum clean all
 RUN curl --silent --location https://rpm.nodesource.com/setup_0.10 | bash -
-RUN yum -y install nodejs; yum clean all
-RUN yum install gcc-c++ openssl-devel make; yum clean all
-RUN npm install -g node-gyp
-ADD ./package.json /opt/app-root/src/
-WORKDIR /opt/app-root/src
+RUN yum install -y gcc-c++ make
+RUN yum -y install nodejs
+ADD ./package.json /opt/app-root/
+WORKDIR /opt/app-root
 RUN npm install
-ADD . /opt/app-root/src
-RUN chmod -R 755 /opt/app-root/src
+ADD . /opt/app-root/
 ADD oc /usr/local/bin/
 
 EXPOSE 8080
