@@ -22,7 +22,7 @@ oc expose dc/shell
 oc login http://shell-{project}.{oseenv}.com:8443
 ```
 
-## Setup users
+## Setup user pods
 
 ```sh
 oc project web
