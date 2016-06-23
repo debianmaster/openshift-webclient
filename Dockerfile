@@ -7,7 +7,7 @@ RUN npm install
 ADD . /opt/app-root/src
 USER 1001
 ADD oc /usr/local/bin/
-RUN mkdir -p .kube && chmod -R 777 .kube
-ENV KUBECONFIG=/opt/app-root/src/.kube
+RUN touch .kube && chmod -R 777 .kube
+ENV KUBECONFIG=~/.kube
 EXPOSE 8080
 CMD ["npm","start"]
