@@ -1,4 +1,4 @@
-FROM node:0.10
+FROM node:4.0.0
 COPY package.json  /opt/app-root/src/
 WORKDIR /opt/app-root/src
 RUN chmod -R 755 /opt/app-root/src
