@@ -9,6 +9,5 @@ USER 1001
 ADD oc /usr/local/bin/
 RUN touch .kube && chmod -R 777 .kube
 ENV KUBECONFIG=~/.kube
-RUN mv /opt/app-root/src/ROOT.war ~/ROOT.war
 EXPOSE 8080
 CMD ["npm","start"]
