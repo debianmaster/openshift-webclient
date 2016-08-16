@@ -5,8 +5,20 @@ Check this link for more info on how to enable privilaged mode https://github.co
 
 ## openshift-webclient setup
 ```sh
-oc new-app https://github.com/debianmaster/openshift-webclient  --name='shell'
-oc expose dc/shell
+oc new-project cli
+oc new-build https://github.com/debianmaster/openshift-webclient --strategy=docker --name=webconsole
+oc new-app webconsole --name=webcli
+```
+> multiple
+
+```sh
+for a in {1..9}; do oc new-app webconsole --name=user0$a; done;
+
+for a in {10..15}; do oc new-app webconsole --name=user$a; done;
+
+for a in {1..9}; do oc expose svc/user0$a  done;
+
+for a in {10..15}; do oc expose svc/user$a; done;
 ```
 
 ## How to use?
