@@ -8,6 +8,6 @@ ADD . /opt/app-root/src
 USER 1001
 ADD oc /usr/local/bin/
 RUN touch .kube && chmod -R 777 .kube
-ENV KUBECONFIG=~/.kube
+ENV KUBECONFIG=/opt/app-root/src/.kube
 EXPOSE 8080
 CMD ["npm","start"]
