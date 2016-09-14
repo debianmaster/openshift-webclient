@@ -9,6 +9,8 @@ ADD . /opt/app-root/src
 ADD oc /usr/local/bin/
 RUN touch .kube && chmod -R 777 .kube
 ENV KUBECONFIG=/opt/app-root/src/.kube
+ENV GIT_COMMITTER_NAME=1001
+ENV GIT_COMMITTER_EMAIL=1001@example.com
 USER 1001
 EXPOSE 8080
 CMD ["npm","start"]
